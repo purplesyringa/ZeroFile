@@ -4,11 +4,35 @@
  "background-color": "#FFF",
  "clone_root": "template-new",
  "cloned_from": "1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D",
- "description": "",
+ "description": "File manager",
  "files": {
   "css/all.css": {
-   "sha512": "9695ba34fce6f5e1e4ddc4709bd19eae775e132126fb1ae2df6ac445949f33b9",
-   "size": 1484
+   "sha512": "09b416f648a8aa9d1b75c1c1fb3a88e9cb93d9fe46cc564b4f4935f8e52c9bd8",
+   "size": 1637
+  },
+  "files/a.txt": {
+   "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce",
+   "size": 0
+  },
+  "files/b.png": {
+   "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce",
+   "size": 0
+  },
+  "files/c/d.jpg": {
+   "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce",
+   "size": 0
+  },
+  "files/c/e.mov": {
+   "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce",
+   "size": 0
+  },
+  "files/c/f/g.foo": {
+   "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce",
+   "size": 0
+  },
+  "files/c/f/h": {
+   "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce",
+   "size": 0
   },
   "img/file/dir.png": {
    "sha512": "128eee6e373d7870c9e8256f0006b413f53dc4b7c53467355924a3b0d43607c5",
@@ -35,28 +59,28 @@
    "size": 1595
   },
   "index.html": {
-   "sha512": "bc99d6d239ef4bc47f860efd5fbd359010082abdbdccc76661f314c4ee45fce7",
-   "size": 610
+   "sha512": "4c44fdadea8d9242fdc7cfd1a64591922fdf2dcfeeb77fabd367f2eee53c1271",
+   "size": 616
   },
   "js/all.js": {
-   "sha512": "f480dfcfe67436a9a1a3ab1258139c7058daef02f71479789536cfc826196759",
-   "size": 12751
+   "sha512": "feb8a189ede024678373e3a5fae1baa460f32ae5d89b8cf7422b00b4bf398ef0",
+   "size": 16519
   }
  },
  "ignore": "^.git|(js|css)/(?!all.(js|css))",
  "inner_path": "content.json",
- "modified": 1495034108,
+ "modified": 1495042396,
  "postmessage_nonce_security": true,
  "sign": [
-  103238910848733246822722652105593335023353114307100103052207555995514572150146,
-  66028232504208560413575017925543553207745008713663048121174807379353017367259
+  31717817523836862129715665646589156394819648477740129372665619191974616956397,
+  5162527844495434032762735735800343969100471703746960149171443797945618238151
  ],
  "signers_sign": "HGeqZHbJyxB3UCMgkaYS84fvaZdhqY7QA38GVBHDZQcCRwutv/EkUS7503E++WqJ3iYGTkLzDBbdx9KASFGMOd0=",
  "signs": {
-  "1KgAQscdGPvWqL8uMPkTrHnA5mZE6TR51S": "HPfbG1o4aiAuYo+D94x8EvTPz34sG1MMYOrmMRflvqJiCIYbKUX9X2J6C+nGYzEunKnwnJFwGLgWDsc6T1U10XY="
+  "1KgAQscdGPvWqL8uMPkTrHnA5mZE6TR51S": "HHA6YB3pXxcapduj4aMcJ4ySYNyrJ/bnNipLqgcsDYfpa3o00ec3IJ3J44a0lu/zix+he267/iwui7asP3o2l1g="
  },
  "signs_required": 1,
- "title": "my new site",
+ "title": "ZeroFile",
  "translate": [
   "js/all.js"
  ],
