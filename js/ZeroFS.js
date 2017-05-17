@@ -46,9 +46,8 @@ class ZeroFS {
 		});
 	}
 	deleteFile(file) {
-		return this.page.cmd("fileWrite", [
-			file, // file
-			"" // base64-encoded content
+		return this.page.cmd("fileDelete", [
+			file // file
 		]).then(res => {
 			if(res === "ok") {
 				return Promise.resolve(file);
