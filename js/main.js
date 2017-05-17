@@ -4,6 +4,15 @@ window.addEventListener("load", () => {
 	window.zeroFS = new ZeroFS(zeroPage);
 	window.files = new Files(zeroFS);
 
-	let path = location.search.replace(/[?&]wrapper_nonce=[\d\w]*/, "").replace(/^[?&]/, "");
+	zeroPage.cmd("wrapperInnerLoaded");
+	setTimeout(() => {
+		if(location.hash == "") {
+			files.load("");
+		}
+	}, 0);
+});
+
+window.addEventListener("hashchange", () => {
+	let path = location.hash.replace(/^#\/?/, "");
 	files.load(path);
 });

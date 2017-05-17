@@ -116,7 +116,7 @@ class Files {
 				files.forEach(file => {
 					let fileNode = document.createElement("a");
 					fileNode.className = "file" + (file.type == "dir" ? " file-dir" : "");
-					fileNode.href = "?" + (path ? path + "/" : "") + file.name;
+					fileNode.href = "#/" + (path ? path + "/" : "") + file.name;
 
 					let fileIconContainer = document.createElement("div");
 					fileIconContainer.className = "file-icon-container";
