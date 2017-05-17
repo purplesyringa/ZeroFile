@@ -1,0 +1,36 @@
+{
+ "address": "1KgAQscdGPvWqL8uMPkTrHnA5mZE6TR51S",
+ "address_index": 92681853,
+ "background-color": "#FFF",
+ "clone_root": "template-new",
+ "cloned_from": "1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D",
+ "description": "",
+ "files": {
+  "index.html": {
+   "sha512": "542f7724432a22ceb8821b4241af4d36cfd81e101b72d425c6c59e148856537e",
+   "size": 1114
+  },
+  "js/ZeroFrame.js": {
+   "sha512": "090a43d18dcd1aa836b0d160631fe958f9fabd761af712e8eed6f7e010c0dd76",
+   "size": 2409
+  }
+ },
+ "ignore": "",
+ "inner_path": "content.json",
+ "modified": 1495022906,
+ "postmessage_nonce_security": true,
+ "sign": [
+  81049566913401254916380854043576512482771492306417454741099909350947197188560,
+  21526218471881680725949368794905396164517041800251654915359352789464839696206
+ ],
+ "signers_sign": "HGeqZHbJyxB3UCMgkaYS84fvaZdhqY7QA38GVBHDZQcCRwutv/EkUS7503E++WqJ3iYGTkLzDBbdx9KASFGMOd0=",
+ "signs": {
+  "1KgAQscdGPvWqL8uMPkTrHnA5mZE6TR51S": "HDSmSyFmIN1kGntYzUU0Ac8eWFTSu4WvWsuTITot+MAQd53yvhC+Ld+Ct6oUsf3mZK5jspF/Il8tDc2sgI1nqyw="
+ },
+ "signs_required": 1,
+ "title": "my new site",
+ "translate": [
+  "js/all.js"
+ ],
+ "zeronet_version": "0.5.4"
+}
