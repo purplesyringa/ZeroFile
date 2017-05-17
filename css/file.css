@@ -32,3 +32,11 @@
 	border-bottom: 0.1em solid #DDD;
 	padding-top: 0.1em;
 }
+
+.file-dir:before {
+	content: "\203A"; /* right arrow */
+	float: right;
+	font-size: 25px;
+	color: #999;
+	font-family: Tahoma;
+}

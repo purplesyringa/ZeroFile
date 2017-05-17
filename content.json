@@ -7,8 +7,8 @@
  "description": "",
  "files": {
   "css/all.css": {
-   "sha512": "c39c0301e18be0e271b2e4172a3cf1bbc0d50eff2094c639753773384650d685",
-   "size": 1356
+   "sha512": "9695ba34fce6f5e1e4ddc4709bd19eae775e132126fb1ae2df6ac445949f33b9",
+   "size": 1484
   },
   "img/file/dir.png": {
    "sha512": "128eee6e373d7870c9e8256f0006b413f53dc4b7c53467355924a3b0d43607c5",
@@ -35,8 +35,8 @@
    "size": 1595
   },
   "index.html": {
-   "sha512": "5a2b13f015cf3e428cc01ae12d6927c34cb2794ab5a5e3ac0cfd41c97719e1e6",
-   "size": 1141
+   "sha512": "a8eb6052cba4ad83e076f44d4c9c3bbd8c9b6d6317313fa605342cfcbb36b32e",
+   "size": 1150
   },
   "js/all.js": {
    "sha512": "68ef0495545b3a88ddb5ab78f4ffe17ca3bb47fab3ee4bc67bed2c7ba9de0711",
@@ -45,15 +45,15 @@
  },
  "ignore": "^.git|(js|css)/(?!all.(js|css))",
  "inner_path": "content.json",
- "modified": 1495030077,
+ "modified": 1495033056,
  "postmessage_nonce_security": true,
  "sign": [
-  113543099965508326502200253964851232053421820909645810217939646163875014122211,
-  31321799706322125308693808195407337856322522692067905799434745237057812548217
+  29046696986479881779044242878628298244976364136347146317508486778799754930412,
+  62246920495068835910826467626398031594140263147705761669946581613932974111348
  ],
  "signers_sign": "HGeqZHbJyxB3UCMgkaYS84fvaZdhqY7QA38GVBHDZQcCRwutv/EkUS7503E++WqJ3iYGTkLzDBbdx9KASFGMOd0=",
  "signs": {
-  "1KgAQscdGPvWqL8uMPkTrHnA5mZE6TR51S": "G478h98vP0HSQgVLejIDY/dh08jncl6uwfYl6fkJB9FiDHzoKYfEugOEDdeAHkQlA6tTOvtdZHGsQGiL37vV9HA="
+  "1KgAQscdGPvWqL8uMPkTrHnA5mZE6TR51S": "HEcck/b21gomsU+0mNtcza26gPfy6ee8T9p3FgEMjZFUN/8PHs367bZJBnSAtfghbgkspnN1EM6DoCgwO89TDxs="
  },
  "signs_required": 1,
  "title": "my new site",
