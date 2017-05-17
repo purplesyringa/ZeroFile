@@ -78,6 +78,10 @@ class Files {
 	getFiles(path) {
 		return this.fs.readDirectory(path)
 			.then(files => {
+				files = files.filter(file => {
+					return file[0] != ".";
+				});
+
 				return ZeroPage.async.map(files, file => {
 					return this.guessType((path ? path + "/" : "") + file)
 						.then(type => {
