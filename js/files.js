@@ -113,8 +113,9 @@ class Files {
 				let filesNode = document.getElementById("files");
 
 				files.forEach(file => {
-					let fileNode = document.createElement("div");
+					let fileNode = document.createElement("a");
 					fileNode.className = "file" + (file.type == "dir" ? " file-dir" : "");
+					fileNode.href = "?" + (path ? path + "/" : "") + file.name;
 
 					let fileIconContainer = document.createElement("div");
 					fileIconContainer.className = "file-icon-container";
@@ -124,9 +125,8 @@ class Files {
 					fileIconContainer.appendChild(fileIcon);
 					fileNode.appendChild(fileIconContainer);
 
-					let link = document.createElement("a");
+					let link = document.createElement("span");
 					link.className = "file-name";
-					link.href = "?" + (path ? path + "/" : "") + file.name;
 					link.textContent = file.name;
 					fileNode.appendChild(link);
 
