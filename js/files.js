@@ -76,6 +76,14 @@ class Files {
 			});
 	}
 	getFiles(path) {
+		if(this.root) {
+			if(path) {
+				path = this.root + "/" + path;
+			} else {
+				path = this.root;
+			}
+		}
+
 		return this.fs.readDirectory(path)
 			.then(files => {
 				files = files.filter(file => {
