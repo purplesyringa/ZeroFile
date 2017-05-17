@@ -111,6 +111,7 @@ class Files {
 		return this.getFiles(path)
 			.then(files => {
 				let filesNode = document.getElementById("files");
+				filesNode.innerHTML = "";
 
 				files.forEach(file => {
 					let fileNode = document.createElement("a");
