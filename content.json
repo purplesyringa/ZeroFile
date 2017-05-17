@@ -7,12 +7,36 @@
  "description": "",
  "files": {
   "css/all.css": {
-   "sha512": "9ed58c13f5089c607a5327f23e800ea0ee54e580b85ed20364a2601ccea88139",
-   "size": 1123
+   "sha512": "c39c0301e18be0e271b2e4172a3cf1bbc0d50eff2094c639753773384650d685",
+   "size": 1356
+  },
+  "img/file/dir.png": {
+   "sha512": "128eee6e373d7870c9e8256f0006b413f53dc4b7c53467355924a3b0d43607c5",
+   "size": 1504
+  },
+  "img/file/file.png": {
+   "sha512": "dbe11358b9c4ce3c2f1c8d7bd18a40a6426141bf08409bdb20f5f962758316e1",
+   "size": 1298
+  },
+  "img/file/image.png": {
+   "sha512": "18884a5d6adfdf4f26d9ea46f2299bfe6b1d723c2780e9a96033e8b93b2b916a",
+   "size": 1848
+  },
+  "img/file/music.png": {
+   "sha512": "9a98ca1c671604ae876b690f842462fe3e82afc442dc5254837bd9e99bffca07",
+   "size": 1810
+  },
+  "img/file/text.png": {
+   "sha512": "99e9119e5bf5ea3872acf7701ab615e7f2e8fd93eda1989ca346f0afa823ec78",
+   "size": 1787
+  },
+  "img/file/video.png": {
+   "sha512": "cf0ef640f2a0f0eee7a4078b48d717c735d8c4a9d84c134c4733d63ffdc22cef",
+   "size": 1595
   },
   "index.html": {
-   "sha512": "cb56c13d1f9df5ab604beb06a06d1f8078f874e4cab667865d78f4939c43fd01",
-   "size": 832
+   "sha512": "5a2b13f015cf3e428cc01ae12d6927c34cb2794ab5a5e3ac0cfd41c97719e1e6",
+   "size": 1141
   },
   "js/all.js": {
    "sha512": "68ef0495545b3a88ddb5ab78f4ffe17ca3bb47fab3ee4bc67bed2c7ba9de0711",
@@ -21,15 +45,15 @@
  },
  "ignore": "^.git|(js|css)/(?!all.(js|css))",
  "inner_path": "content.json",
- "modified": 1495028042,
+ "modified": 1495030077,
  "postmessage_nonce_security": true,
  "sign": [
-  7602974584817653255630770242527276269783055234457721228210270189194691374365,
-  13670685702613865894465865790100098173197608045055281198144495623376658751478
+  113543099965508326502200253964851232053421820909645810217939646163875014122211,
+  31321799706322125308693808195407337856322522692067905799434745237057812548217
  ],
  "signers_sign": "HGeqZHbJyxB3UCMgkaYS84fvaZdhqY7QA38GVBHDZQcCRwutv/EkUS7503E++WqJ3iYGTkLzDBbdx9KASFGMOd0=",
  "signs": {
-  "1KgAQscdGPvWqL8uMPkTrHnA5mZE6TR51S": "G44Al7i3l5DpPWZOmVKBjeC7yIOqjQekBmOhNsf6NIz0VVUn1D9b7XHKwDU3R/6B59FS+Quf+6rlbwLpTXnD8oo="
+  "1KgAQscdGPvWqL8uMPkTrHnA5mZE6TR51S": "G478h98vP0HSQgVLejIDY/dh08jncl6uwfYl6fkJB9FiDHzoKYfEugOEDdeAHkQlA6tTOvtdZHGsQGiL37vV9HA="
  },
  "signs_required": 1,
  "title": "my new site",

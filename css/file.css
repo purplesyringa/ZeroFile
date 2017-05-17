@@ -5,7 +5,23 @@
 	background-color: #FFFFFF;
 }
 
+.file-icon-container {
+	display: inline-block;
+	width: 3em;
+	height: 2em;
+	vertical-align: middle;
+}
+.file-icon {
+	width: auto;
+	height: 100%;
+
+	opacity: 0.3;
+}
+
 .file-name {
+	display: inline-block;
+	vertical-align: middle;
+
 	font-family: 'Roboto', sans-serif;
 	font-weight: bold;
 	font-size: 1.2em;
@@ -14,4 +30,5 @@
 }
 .file-name:hover {
 	border-bottom: 0.1em solid #DDD;
+	padding-top: 0.1em;
 }
