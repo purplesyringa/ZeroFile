@@ -1,0 +1,13 @@
+.top-logo {
+	display: inline-block;
+	padding: 13px;
+
+	margin-top: 14px;
+
+	background-color: #BDBD07;
+	color: #FFFFFF;
+	font-size: 20px;
+	text-transform: uppercase;
+	line-height: 1em;
+	font-family: consolas, menlo, monospace;
+}

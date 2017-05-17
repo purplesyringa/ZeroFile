@@ -1,0 +1,13 @@
+body {
+	margin: 0;
+
+	background-color: #F5F5F5;
+}
+
+.main {
+	display: block;
+	width: 778px;
+	margin: 14px auto 0;
+
+	background-color: #FFFFFF;
+}
