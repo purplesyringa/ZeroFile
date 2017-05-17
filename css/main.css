@@ -1,12 +1,20 @@
-body {
+html, body {
+	height: 100%;
 	margin: 0;
-
+	padding: 0;
+}
+body {
 	background-color: #F5F5F5;
 }
 
 .main {
 	display: block;
 	width: 778px;
+	height: calc(100% - 28px);
 	margin: 0 auto;
-	padding-top: 14px;
+	padding: 14px 0;
+}
+
+.main-files {
+	height: calc(100% - 70px);
 }

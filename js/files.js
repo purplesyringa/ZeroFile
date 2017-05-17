@@ -183,5 +183,24 @@ class Files {
 			});
 	}
 	loadFile(path) {
+		let absolute = this.getAbsolutePath(path);
+
+		let filesNode = document.getElementById("files");
+		filesNode.innerHTML = "";
+
+		return this.guessType(absolute)
+			.then(type => {
+				let contentNode = document.createElement("div");
+				contentNode.className = "file-content";
+
+				if(type == "image") {
+					let image = document.createElement("div");
+					image.className = "file-content-image";
+					image.style.backgroundImage = "url(" + absolute + ")";
+					contentNode.appendChild(image);
+				}
+
+				filesNode.appendChild(contentNode);
+			});
 	}
 };
