@@ -13,6 +13,8 @@ window.addEventListener("load", () => {
 });
 
 window.addEventListener("hashchange", () => {
-	let path = location.hash.replace(/^#\/?/, "");
-	files.load(path);
+	if(location.hash.indexOf("#/") == 0) {
+		let path = location.hash.replace(/^#\//, "");
+		files.load(path);
+	}
 });
