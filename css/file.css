@@ -1,0 +1,17 @@
+.file {
+	margin: 1px;
+	padding: 15px 25px;
+
+	background-color: #FFFFFF;
+}
+
+.file-name {
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	font-size: 1.2em;
+	text-decoration: none;
+	color: #DB3207;
+}
+.file-name:hover {
+	border-bottom: 0.1em solid #DDD;
+}
