@@ -137,9 +137,11 @@ class Files {
 			pathNode.appendChild(fileNode);
 		});
 
+		let filesNode = document.getElementById("files");
+		filesNode.innerHTML = "";
+
 		return this.getFiles(path)
 			.then(files => {
-				let filesNode = document.getElementById("files");
 				filesNode.innerHTML = "";
 
 				files.forEach(file => {
