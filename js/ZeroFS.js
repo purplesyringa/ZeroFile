@@ -77,6 +77,36 @@ class ZeroFS {
 		});
 	}
 
+	getType(file) {
+		if(file == "") {
+			return Promise.resolve("dir");
+		}
+
+		let dir = file.split("/");
+		let relative = dir.pop();
+		dir = dir.join("/");
+
+		return this.page.cmd("fileList", [
+			dir, // directory
+		]).then(res => {
+			res = res.map(file => { // Crop by "/" symbol
+				if(file.indexOf("/") == -1) {
+					return file;
+				} else {
+					return file.substr(0, file.indexOf("/")) + "/";
+				}
+			});
+
+			if(res.indexOf(relative) > -1) {
+				return "file";
+			} else if(res.indexOf(relative + "/") > -1) {
+				return "dir";
+			} else {
+				return Promise.reject("File doesn't exist: " + file);
+			}
+		});
+	}
+
 	toBase64(str) {
 		return btoa(unescape(encodeURIComponent(str)));
 	}
