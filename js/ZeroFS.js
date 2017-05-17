@@ -63,7 +63,7 @@ class ZeroFS {
 			dir, // directory
 		]).then(res => {
 			if(recursive) {
-				return res; // If recursive, return as given
+				return res.sort(); // If recursive, return as given
 			} else {
 				return res.map(file => { // Otherwise, crop by "/" symbol
 					if(file.indexOf("/") == -1) {
@@ -73,7 +73,7 @@ class ZeroFS {
 					}
 				}).reduce((arr, cur) => { // And make them unique
 					return arr.indexOf(cur) > -1 ? arr : arr.concat(cur);
-				}, []);
+				}, []).sort();
 			}
 		});
 	}
