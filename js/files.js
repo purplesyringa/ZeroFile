@@ -103,10 +103,39 @@ class Files {
 	}
 
 	load(path) {
-		document.getElementById("path").textContent = (
-			(this.showRoot ? [this.showRoot] : [])
-				.concat(path ? path.split("/") : []).join(this.shownPathDelim)
-		);
+		let pathNode = document.getElementById("path");
+		pathNode.innerHTML = "";
+		let pathSplit = path ? path.split("/") : [];
+
+		if(this.showRoot) {
+			let fileNode;
+			if(path) {
+				fileNode = document.createElement("a");
+				fileNode.href = "#/";
+			} else {
+				fileNode = document.createElement("span");
+			}
+			fileNode.textContent = this.showRoot;
+			pathNode.appendChild(fileNode);
+		}
+
+		pathSplit.forEach((file, i) => {
+			if(i > 0 || this.showRoot) {
+				let delim = document.createElement("span");
+				delim.innerHTML = this.shownPathDelim;
+				pathNode.appendChild(delim);
+			}
+
+			let fileNode;
+			if(i < pathSplit.length - 1) {
+				fileNode = document.createElement("a");
+				fileNode.href = "#/" + pathSplit.slice(0, i + 1).join("/");
+			} else {
+				fileNode = document.createElement("span");
+			}
+			fileNode.textContent = file;
+			pathNode.appendChild(fileNode);
+		});
 
 		return this.getFiles(path)
 			.then(files => {
