@@ -1,8 +1,8 @@
 .top-logo {
 	display: inline-block;
 	padding: 13px;
-
 	margin-top: 14px;
+	float: left;
 
 	background-color: #BDBD07;
 	color: #FFFFFF;
