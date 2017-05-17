@@ -76,13 +76,7 @@ class Files {
 			});
 	}
 	getFiles(path) {
-		if(this.root) {
-			if(path) {
-				path = this.root + "/" + path;
-			} else {
-				path = this.root;
-			}
-		}
+		path = this.getAbsolutePath(path);
 
 		return this.fs.readDirectory(path)
 			.then(files => {
@@ -100,6 +94,18 @@ class Files {
 						});
 				});
 			});
+	}
+
+	getAbsolutePath(path) {
+		if(!this.root) {
+			return path;
+		}
+
+		if(path) {
+			return this.root + "/" + path;
+		} else {
+			return this.root;
+		}
 	}
 
 	load(path) {
