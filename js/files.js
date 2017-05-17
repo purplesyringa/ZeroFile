@@ -143,7 +143,14 @@ class Files {
 			pathNode.appendChild(fileNode);
 		});
 
-		return this.loadDirectory(path);
+		return this.fs.getType(this.getAbsolutePath(path))
+			.then(type => {
+				if(type == "dir") {
+					return this.loadDirectory(path);
+				} else {
+					return this.loadFile(path);
+				}
+			});
 	}
 	loadDirectory(path) {
 		let filesNode = document.getElementById("files");
@@ -174,5 +181,7 @@ class Files {
 					filesNode.appendChild(fileNode);
 				});
 			});
+	}
+	loadFile(path) {
 	}
 };
