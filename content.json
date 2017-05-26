@@ -67,7 +67,7 @@
    "size": 16519
   }
  },
- "ignore": "^.git|(js|css)/(?!all.(js|css))",
+ "ignore": "^.git|(js|css)/(?!all.(js|css))|^data.txt$",
  "inner_path": "content.json",
  "modified": 1495042396,
  "postmessage_nonce_security": true,
