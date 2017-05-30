@@ -14,3 +14,19 @@
 
 	object-fit: contain;
 }
+
+.file-content-error {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	padding-top: 100px;
+
+	text-align: center;
+	color: #B2B2B2;
+
+	line-height: 1.2em;
+	font-weight: lighter;
+	font-size: 45px;
+	letter-spacing: -0.5px;
+	font-family: 'Roboto', sans-serif;
+}

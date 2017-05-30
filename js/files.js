@@ -197,10 +197,22 @@ class Files {
 					let image = document.createElement("img");
 					image.className = "file-content-image";
 					image.src = absolute;
+					image.onerror = () => {
+						image.onerror = null;
+						image.style.display = "none";
+
+						this.showFileError(contentNode, "File was removed or corrupted");
+					};
 					contentNode.appendChild(image);
 				}
 
 				filesNode.appendChild(contentNode);
 			});
+	}
+	showFileError(contentNode, html) {
+		let text = document.createElement("div");
+		text.className = "file-content-error";
+		text.innerHTML = html;
+		contentNode.appendChild(text);
 	}
 };
