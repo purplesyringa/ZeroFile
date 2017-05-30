@@ -194,9 +194,9 @@ class Files {
 				contentNode.className = "file-content";
 
 				if(type == "image") {
-					let image = document.createElement("div");
+					let image = document.createElement("img");
 					image.className = "file-content-image";
-					image.style.backgroundImage = "url(" + absolute + ")";
+					image.src = absolute;
 					contentNode.appendChild(image);
 				}
 
