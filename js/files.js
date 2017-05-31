@@ -235,6 +235,18 @@ class Files {
 						this.showFileError(contentNode, "File was removed or corrupted");
 					};
 					contentNode.appendChild(video);
+				} else if(type == "music") {
+					let music = document.createElement("audio");
+					music.className = "file-content-music";
+					music.src = encodeURIComponent(absolute);
+					music.controls = true;
+					music.onerror = () => {
+						music.onerror = null;
+						music.style.display = "none";
+
+						this.showFileError(contentNode, "File was removed or corrupted");
+					};
+					contentNode.appendChild(music);
 				}
 
 				filesNode.appendChild(contentNode);
