@@ -6,6 +6,19 @@ class ZeroOptional {
 		this.page = page;
 	}
 
+	fileExists(file) {
+		if(file == "") { // root
+			return Promise.resolve(false);
+		}
+
+		let dirPath = file.split("/").slice(0, -1).join("/");
+		let basePath = file.split("/").pop();
+
+		return this.readDirectory(dirPath)
+			.then(children => {
+				return Promise.resolve(children.indexOf(basePath) > -1);
+			});
+	}
 	readFile(file) {
 		return this.page.cmd("fileGet", [
 			file, // file
@@ -20,24 +33,28 @@ class ZeroOptional {
 			}
 		});
 	}
-	getType(file) {
-		if(file == "") {
-			return Promise.reject("File doesn't exist: " + file);
-		}
-
-		let dir = file.split("/");
-		let relative = dir.pop();
-		dir = dir.join("/");
-
-		return this.getFileList(dir)
-			.then(res => {
-				let found = res.find(f => f.path == relative);
-				if(!found) {
-					return Promise.reject("File doesn't exist: " + file);
-				}
-
-				return found.type;
-			});
+	writeFile(file, content) {
+		return this.page.cmd("fileWrite", [
+			file, // file
+			this.toBase64(content) // base64-encoded content
+		]).then(res => {
+			if(res === "ok") {
+				return Promise.resolve(file);
+			} else {
+				return Promise.reject(res);
+			}
+		});
+	}
+	deleteFile(file) {
+		return this.page.cmd("fileDelete", [
+			file // file
+		]).then(res => {
+			if(res === "ok") {
+				return Promise.resolve(file);
+			} else {
+				return Promise.reject(res);
+			}
+		});
 	}
 
 	getFileList(directory, recursive) {
@@ -89,5 +106,25 @@ class ZeroOptional {
 	readDirectory(dir, recursive) {
 		return this.getFileList(dir, recursive)
 			.then(files => files.map(file => file.path));
+	}
+
+	getType(file) {
+		if(file == "") {
+			return Promise.reject("File doesn't exist: " + file);
+		}
+
+		let dir = file.split("/");
+		let relative = dir.pop();
+		dir = dir.join("/");
+
+		return this.getFileList(dir)
+			.then(res => {
+				let found = res.find(f => f.path == relative);
+				if(!found) {
+					return Promise.reject("File doesn't exist: " + file);
+				}
+
+				return found.type;
+			});
 	}
 };
