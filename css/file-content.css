@@ -1,6 +1,6 @@
 .file-content {
 	display: block;
-	height: calc(100% - 30px);
+	height: calc(100% - 32px);
 	margin: 1px;
 	padding: 15px 25px;
 
@@ -38,7 +38,7 @@
 .file-content-error {
 	display: inline-block;
 	width: 100%;
-	height: 100%;
+	height: calc(100% - 100px);
 	padding-top: 100px;
 
 	text-align: center;
