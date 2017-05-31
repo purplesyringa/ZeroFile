@@ -7,8 +7,12 @@
  "description": "File manager",
  "files": {
   "css/all.css": {
-   "sha512": "cd0a51740d9b311965d9f19763c2a34ae58328c06605efeea0a3044c530a7742",
-   "size": 2832
+   "sha512": "c1a7616ab98882706407ecfdec7cc413c727f13c73da9ab6d75bf060fc4039b3",
+   "size": 3077
+  },
+  "img/download.png": {
+   "sha512": "9884d71831f864fe2f77ae9c92f12d6c44e2203faf5bd33c45357b3d5220e099",
+   "size": 1687
   },
   "img/file/dir.png": {
    "sha512": "128eee6e373d7870c9e8256f0006b413f53dc4b7c53467355924a3b0d43607c5",
@@ -39,8 +43,8 @@
    "size": 657
   },
   "js/all.js": {
-   "sha512": "0e31ffc01d8b73097f289797684799339e5ca3047346dd7e4ae96a5627c7de75",
-   "size": 23173
+   "sha512": "9f52a7851939efff62772f491263e3c1f516cdab9183f40a536c293ac3820819",
+   "size": 26728
   }
  },
  "files_optional": {
@@ -87,16 +91,16 @@
  },
  "ignore": "^.git|(js|css)/(?!all.(js|css))|^data.txt$",
  "inner_path": "content.json",
- "modified": 1496247865,
+ "modified": 1496257980,
  "optional": "^files/.*",
  "postmessage_nonce_security": true,
  "sign": [
-  71822851012701842992897381332751175526252868005146896902027671250790900310484,
-  43986039740863904106900951587859832889260196975137048389226090188013681350892
+  72029007355586173997372688399933338948664070959626568866579953022064846872052,
+  30886976718832581918340770038560171324228719299022338493037912543604288206885
  ],
  "signers_sign": "HGeqZHbJyxB3UCMgkaYS84fvaZdhqY7QA38GVBHDZQcCRwutv/EkUS7503E++WqJ3iYGTkLzDBbdx9KASFGMOd0=",
  "signs": {
-  "1KgAQscdGPvWqL8uMPkTrHnA5mZE6TR51S": "GzPsKDXmaPiy7Pm+ucv3wBsJ2uIwhX43ONH6tF/2yxwbbqp2JjCViJcUlQYtKvr9OHPIW6CJiXnabdsSoRt1AgY="
+  "1KgAQscdGPvWqL8uMPkTrHnA5mZE6TR51S": "HIJ2gBuCbfaFj4uolYFpNEe/JV2BBFkxmW2IXMf/xUYGcpPBm3AA2dTBrF5eaXxVL9YtatuL21ADa9IooYwCvAs="
  },
  "signs_required": 1,
  "title": "ZeroFile",
