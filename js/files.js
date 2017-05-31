@@ -223,6 +223,19 @@ class Files {
 							text.textContent = content;
 							contentNode.appendChild(text);
 						});
+				} else if(type == "video") {
+					let video = document.createElement("video");
+					video.className = "file-content-video";
+					video.src = absolute;
+					console.log(video.src);
+					video.controls = true;
+					video.onerror = (e) => {
+						video.onerror = null;
+						video.style.display = "none";
+
+						this.showFileError(contentNode, "File was removed or corrupted");
+					};
+					contentNode.appendChild(video);
 				}
 
 				filesNode.appendChild(contentNode);
