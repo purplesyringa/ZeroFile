@@ -193,7 +193,7 @@ class Files {
 				if(type == "image") {
 					let image = document.createElement("img");
 					image.className = "file-content-image";
-					image.src = encodeURIComponent(absolute);
+					image.src = encodeURI(absolute);
 					image.onerror = () => {
 						image.onerror = null;
 						image.style.display = "none";
@@ -226,7 +226,7 @@ class Files {
 				} else if(type == "video") {
 					let video = document.createElement("video");
 					video.className = "file-content-video";
-					video.src = encodeURIComponent(absolute);
+					video.src = encodeURI(absolute);
 					video.controls = true;
 					video.onerror = () => {
 						video.onerror = null;
@@ -238,7 +238,7 @@ class Files {
 				} else if(type == "music") {
 					let music = document.createElement("audio");
 					music.className = "file-content-music";
-					music.src = encodeURIComponent(absolute);
+					music.src = encodeURI(absolute);
 					music.controls = true;
 					music.onerror = () => {
 						music.onerror = null;
