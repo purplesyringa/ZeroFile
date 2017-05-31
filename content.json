@@ -7,11 +7,15 @@
  "description": "File manager",
  "files": {
   "css/all.css": {
-   "sha512": "c1a7616ab98882706407ecfdec7cc413c727f13c73da9ab6d75bf060fc4039b3",
-   "size": 3077
+   "sha512": "e7a645f9f495ce6e58620a930d6d35b2e00328d21ad9588ca9ec034734c4f871",
+   "size": 3160
   },
   "img/download.png": {
    "sha512": "9884d71831f864fe2f77ae9c92f12d6c44e2203faf5bd33c45357b3d5220e099",
+   "size": 1687
+  },
+  "img/downloaded.png": {
+   "sha512": "ba659b926d22b8770886746753d66b5175f71ef7101f96bdddbe0edfcc25ed01",
    "size": 1687
   },
   "img/file/dir.png": {
@@ -43,8 +47,8 @@
    "size": 657
   },
   "js/all.js": {
-   "sha512": "9f52a7851939efff62772f491263e3c1f516cdab9183f40a536c293ac3820819",
-   "size": 26728
+   "sha512": "0b06928c3b27305b3f8e94a66b91943115128a04bf84a11bbaf6535ea419cc6d",
+   "size": 26850
   }
  },
  "files_optional": {
@@ -91,16 +95,16 @@
  },
  "ignore": "^.git|(js|css)/(?!all.(js|css))|^data.txt$",
  "inner_path": "content.json",
- "modified": 1496257980,
+ "modified": 1496258805,
  "optional": "^files/.*",
  "postmessage_nonce_security": true,
  "sign": [
-  72029007355586173997372688399933338948664070959626568866579953022064846872052,
-  30886976718832581918340770038560171324228719299022338493037912543604288206885
+  83772218699912890169707884264217199630726325687780556332489683577285214590435,
+  87457514673196644238407396098566801128965748618998589281156340737003576482855
  ],
  "signers_sign": "HGeqZHbJyxB3UCMgkaYS84fvaZdhqY7QA38GVBHDZQcCRwutv/EkUS7503E++WqJ3iYGTkLzDBbdx9KASFGMOd0=",
  "signs": {
-  "1KgAQscdGPvWqL8uMPkTrHnA5mZE6TR51S": "HIJ2gBuCbfaFj4uolYFpNEe/JV2BBFkxmW2IXMf/xUYGcpPBm3AA2dTBrF5eaXxVL9YtatuL21ADa9IooYwCvAs="
+  "1KgAQscdGPvWqL8uMPkTrHnA5mZE6TR51S": "HDDDdvE8WkGdDpw6Az+N+KfQps3Ak2cBNnNFPue/GpbzdJbkozR4GQqF6Efvn1S2OHhU89ry+NPVx9ythkGEjZA="
  },
  "signs_required": 1,
  "title": "ZeroFile",
