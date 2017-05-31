@@ -168,10 +168,13 @@ class Files {
 					fileNode.className = "file" + (file.type == "dir" ? " file-dir" : "");
 					fileNode.href = "#/" + btoa((path ? path + "/" : "") + file.name);
 
-					if(file.optional && !file.downloaded && file.type != "dir") {
+					if(file.optional && file.type != "dir") {
 						let fileDownload = document.createElement("div");
-						fileDownload.className = "file-download";
-						fileDownload.title = "This file is marked as optional and wasn't downloaded yet";
+						fileDownload.className = "file-download" + (file.downloaded ? " file-downloaded" : "");
+						fileDownload.title = (file.downloaded
+							? "This file is marked as optional and was downloaded"
+							: "This file is marked as optional and wasn't downloaded yet"
+						);
 						fileNode.appendChild(fileDownload);
 					}
 

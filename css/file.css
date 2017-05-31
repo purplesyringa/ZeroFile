@@ -53,3 +53,7 @@
 	background-size: contain;
 	background-repeat: no-repeat;
 }
+.file-downloaded {
+	background-image: url(../img/downloaded.png);
+	opacity: 0.3;
+}
