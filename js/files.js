@@ -132,7 +132,7 @@ class Files {
 			let fileNode;
 			if(i < pathSplit.length - 1) {
 				fileNode = document.createElement("a");
-				fileNode.href = "#/" + pathSplit.slice(0, i + 1).join("/");
+				fileNode.href = "#/" + btoa(pathSplit.slice(0, i + 1).join("/"));
 			} else {
 				fileNode = document.createElement("span");
 			}
@@ -160,7 +160,7 @@ class Files {
 				files.forEach(file => {
 					let fileNode = document.createElement("a");
 					fileNode.className = "file" + (file.type == "dir" ? " file-dir" : "");
-					fileNode.href = "#/" + (path ? path + "/" : "") + file.name;
+					fileNode.href = "#/" + btoa((path ? path + "/" : "") + file.name);
 
 					let fileIconContainer = document.createElement("div");
 					fileIconContainer.className = "file-icon-container";

@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
 
 window.addEventListener("hashchange", () => {
 	if(location.hash.indexOf("#/") == 0) {
-		let path = location.hash.replace(/^#\//, "");
+		let path = atob(location.hash.replace(/^#\//, ""));
 		files.load(path);
 	}
 });
