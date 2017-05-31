@@ -30,8 +30,8 @@
 	color: #DB3207;
 }
 .file:hover .file-name {
-	border-bottom: 0.1em solid #DDD;
-	padding-top: 0.1em;
+	border-bottom: 1px solid #DDD;
+	padding-top: 1px;
 }
 
 .file-dir:before {
