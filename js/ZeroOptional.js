@@ -58,50 +58,51 @@ class ZeroOptional {
 	}
 
 	getFileList(directory, recursive) {
-		return this.page.cmd("optionalFileList", [
-			undefined,
-			"time_downloaded DESC",
-			100000
-		]).then(files => {
-			files = files
-				.map(file => {
-					if(file.inner_path.substr(0, directory.length + 1) == directory + "/") {
-						file.inner_path = file.inner_path.substr(directory.length + 1);
-						return file;
-					} else if(directory == "") {
-						return file;
-					} else {
-						return null;
-					}
-				})
-				.filter(file => file);
-
-			if(!recursive) {
+		return this.page.cmd("fileGet", ["content.json", true, "text", 300])
+			.then(json => {
+				let files = Object.keys(JSON.parse(json).files_optional || {});
+				return ZeroPage.async.map(files, file => this.page.cmd("optionalFileInfo", [file]));
+			})
+			.then(files => {
 				files = files
 					.map(file => {
-						let pos = file.inner_path.indexOf("/")
-						file.type = pos == -1 ? "file" : "dir";
-						if(pos != -1) {
-							file.inner_path = file.inner_path.substr(0, pos);
+						if(file.inner_path.substr(0, directory.length + 1) == directory + "/") {
+							file.inner_path = file.inner_path.substr(directory.length + 1);
+							return file;
+						} else if(directory == "") {
+							return file;
+						} else {
+							return null;
 						}
-						return file;
 					})
-					.reduce((arr, cur) => {
-						return arr.find(a => a.inner_path == cur.inner_path) ? arr : arr.concat(cur);
-					}, [])
-					.sort((a, b) => a.inner_path.localeCompare(b.inner_path));
-			}
+					.filter(file => file);
 
-			return files
-				.map(file => {
-					return {
-						path: file.inner_path,
-						type: file.type,
-						downloaded: !!file.is_downloaded,
-						pinned: !!file.is_pinned
-					};
-				});
-		});
+				if(!recursive) {
+					files = files
+						.map(file => {
+							let pos = file.inner_path.indexOf("/")
+							file.type = pos == -1 ? "file" : "dir";
+							if(pos != -1) {
+								file.inner_path = file.inner_path.substr(0, pos);
+							}
+							return file;
+						})
+						.reduce((arr, cur) => {
+							return arr.find(a => a.inner_path == cur.inner_path) ? arr : arr.concat(cur);
+						}, [])
+						.sort((a, b) => a.inner_path.localeCompare(b.inner_path));
+				}
+
+				return files
+					.map(file => {
+						return {
+							path: file.inner_path,
+							type: file.type,
+							downloaded: !!file.is_downloaded,
+							pinned: !!file.is_pinned
+						};
+					});
+			});
 	}
 	readDirectory(dir, recursive) {
 		return this.getFileList(dir, recursive)
