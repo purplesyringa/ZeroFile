@@ -247,6 +247,28 @@ class Files {
 						this.showFileError(contentNode, "File was removed or corrupted");
 					};
 					contentNode.appendChild(music);
+				} else if(type == "file") {
+					let loaded = false;
+
+					let node = null;
+					setTimeout(() => {
+						if(!loaded) {
+							node = this.showFileError(contentNode, "Loading...");
+						}
+					}, 500);
+
+					this.fs.readFile(absolute)
+						.then(content => {
+							loaded = true;
+							if(node) {
+								node.style.display = "none";
+							}
+
+							let text = document.createElement("div");
+							text.className = "file-content-text";
+							text.innerHTML = binaryToText(content);
+							contentNode.appendChild(text);
+						});
 				}
 
 				filesNode.appendChild(contentNode);
