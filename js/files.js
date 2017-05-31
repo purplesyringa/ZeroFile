@@ -1,7 +1,6 @@
 class Files {
-	constructor(fs, optional) {
+	constructor(fs) {
 		this.fs = fs;
-		this.optional = optional;
 		this.shownPathDelim = " " + String.fromCharCode(8250) + " "; /* right arrow */
 		this.root = "files";
 		this.showRoot = "Root";

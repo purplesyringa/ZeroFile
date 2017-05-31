@@ -1,9 +1,8 @@
 window.addEventListener("load", () => {
 	window.zeroFrame = new ZeroFrame();
 	window.zeroPage = new ZeroPage(zeroFrame);
-	window.zeroFS = new ZeroFS(zeroPage);
-	window.zeroOptional = new ZeroOptional(zeroPage);
-	window.files = new Files(zeroFS, zeroOptional);
+	window.zeroOptionalProxy = new ZeroOptionalProxy(zeroPage);
+	window.files = new Files(zeroOptionalProxy);
 
 	zeroPage.cmd("wrapperInnerLoaded");
 	setTimeout(() => {
