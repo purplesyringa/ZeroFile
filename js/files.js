@@ -159,8 +159,21 @@ class Files {
 		let filesNode = document.getElementById("files");
 		filesNode.innerHTML = "";
 
+		let loaded = false;
+		let errorNode = null;
+		setTimeout(() => {
+			if(!loaded) {
+				errorNode = this.showFileError(filesNode, "Loading...");
+			}
+		}, 500);
+
 		return this.getFiles(path)
 			.then(files => {
+				loaded = true;
+				if(errorNode) {
+					errorNode.style.display = "none";
+				}
+
 				filesNode.innerHTML = "";
 
 				files.forEach(file => {
