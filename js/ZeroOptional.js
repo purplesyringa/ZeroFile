@@ -6,6 +6,40 @@ class ZeroOptional {
 		this.page = page;
 	}
 
+	readFile(file) {
+		return this.page.cmd("fileGet", [
+			file, // file
+			true, // required (wait until file exists)
+			"text", // text or base64
+			5000 // timeout
+		]).then(res => {
+			if(res === null || res === false) {
+				return Promise.reject("File doesn't exist: " + file);
+			} else {
+				return Promise.resolve(res);
+			}
+		});
+	}
+	getType(file) {
+		if(file == "") {
+			return Promise.reject("File doesn't exist: " + file);
+		}
+
+		let dir = file.split("/");
+		let relative = dir.pop();
+		dir = dir.join("/");
+
+		return this.getFileList(dir)
+			.then(res => {
+				let found = res.find(f => f.path == relative);
+				if(!found) {
+					return Promise.reject("File doesn't exist: " + file);
+				}
+
+				return found.type;
+			});
+	}
+
 	getFileList(directory, recursive) {
 		return this.page.cmd("optionalFileList", [
 			undefined,
@@ -29,6 +63,7 @@ class ZeroOptional {
 				files = files
 					.map(file => {
 						let pos = file.inner_path.indexOf("/")
+						file.type = pos == -1 ? "file" : "dir";
 						if(pos != -1) {
 							file.inner_path = file.inner_path.substr(0, pos);
 						}
@@ -44,10 +79,15 @@ class ZeroOptional {
 				.map(file => {
 					return {
 						path: file.inner_path,
+						type: file.type,
 						downloaded: !!file.is_downloaded,
 						pinned: !!file.is_pinned
 					};
 				});
 		});
+	}
+	readDirectory(dir, recursive) {
+		return this.getFileList(dir, recursive)
+			.then(files => files.map(file => file.path));
 	}
 };
