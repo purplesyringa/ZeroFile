@@ -193,7 +193,7 @@ class Files {
 				if(type == "image") {
 					let image = document.createElement("img");
 					image.className = "file-content-image";
-					image.src = absolute;
+					image.src = encodeURIComponent(absolute);
 					image.onerror = () => {
 						image.onerror = null;
 						image.style.display = "none";
@@ -226,10 +226,9 @@ class Files {
 				} else if(type == "video") {
 					let video = document.createElement("video");
 					video.className = "file-content-video";
-					video.src = absolute;
-					console.log(video.src);
+					video.src = encodeURIComponent(absolute);
 					video.controls = true;
-					video.onerror = (e) => {
+					video.onerror = () => {
 						video.onerror = null;
 						video.style.display = "none";
 
