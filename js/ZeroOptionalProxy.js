@@ -57,4 +57,10 @@ class ZeroOptionalProxy {
 		return this.fs.getType(file)
 			.catch(() => this.optional.getType(file));
 	}
+	isOptional(file) {
+		return this.optional.isOptional(file);
+	}
+	isDownloaded(file) {
+		return this.optional.isDownloaded(file);
+	}
 };

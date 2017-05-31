@@ -127,4 +127,33 @@ class ZeroOptional {
 				return found.type;
 			});
 	}
+	isOptional(file) {
+		if(file == "") {
+			return Promise.resolve(false);
+		}
+
+		let dir = file.split("/");
+		let relative = dir.pop();
+		dir = dir.join("/");
+
+		return this.getFileList(dir)
+			.then(res => {
+				return res.find(f => f.path == relative);
+			});
+	}
+	isDownloaded(file) {
+		if(file == "") {
+			return Promise.resolve(false);
+		}
+
+		let dir = file.split("/");
+		let relative = dir.pop();
+		dir = dir.join("/");
+
+		return this.getFileList(dir)
+			.then(res => {
+				let found = res.find(f => f.path == relative);
+				return found && found.downloaded;
+			});
+	}
 };
