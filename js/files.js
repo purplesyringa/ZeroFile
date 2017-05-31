@@ -46,12 +46,9 @@ class Files {
 				"m4v" // M4V
 			],
 			text: [
-				"doc", // Doc
-				"docx",
-				"latex", // LaTeX
-				"tex",
 				"text", // TXT
-				"txt"
+				"txt",
+				"readme"
 			]
 		};
 	}
@@ -204,6 +201,28 @@ class Files {
 						this.showFileError(contentNode, "File was removed or corrupted");
 					};
 					contentNode.appendChild(image);
+				} else if(type == "text") {
+					let loaded = false;
+
+					let node = null;
+					setTimeout(() => {
+						if(!loaded) {
+							node = this.showFileError(contentNode, "Loading...");
+						}
+					}, 500);
+
+					this.fs.readFile(absolute)
+						.then(content => {
+							loaded = true;
+							if(node) {
+								node.style.display = "none";
+							}
+
+							let text = document.createElement("div");
+							text.className = "file-content-text";
+							text.textContent = content;
+							contentNode.appendChild(text);
+						});
 				}
 
 				filesNode.appendChild(contentNode);
@@ -214,5 +233,6 @@ class Files {
 		text.className = "file-content-error";
 		text.innerHTML = html;
 		contentNode.appendChild(text);
+		return text;
 	}
 };
