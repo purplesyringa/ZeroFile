@@ -82,11 +82,17 @@ class Files {
 				});
 
 				return ZeroPage.async.map(files, file => {
-					return this.guessType((path ? path + "/" : "") + file)
-						.then(type => {
+					return Promise.all([
+						this.guessType((path ? path + "/" : "") + file),
+						this.fs.isOptional((path ? path + "/" : "") + file),
+						this.fs.isDownloaded((path ? path + "/" : "") + file)
+					])
+						.then(([type, optional, downloaded]) => {
 							return {
 								type: type,
-								name: file
+								name: file,
+								optional: optional,
+								downloaded: downloaded
 							};
 						});
 				});
@@ -161,6 +167,13 @@ class Files {
 					let fileNode = document.createElement("a");
 					fileNode.className = "file" + (file.type == "dir" ? " file-dir" : "");
 					fileNode.href = "#/" + btoa((path ? path + "/" : "") + file.name);
+
+					if(file.optional && !file.downloaded && file.type != "dir") {
+						let fileDownload = document.createElement("div");
+						fileDownload.className = "file-download";
+						fileDownload.title = "This file is marked as optional and wasn't downloaded yet";
+						fileNode.appendChild(fileDownload);
+					}
 
 					let fileIconContainer = document.createElement("div");
 					fileIconContainer.className = "file-icon-container";

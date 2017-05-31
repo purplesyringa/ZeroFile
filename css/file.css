@@ -41,3 +41,15 @@
 	color: #999;
 	font-family: Tahoma;
 }
+
+.file-download {
+	display: inline-block;
+	width: 16px;
+	height: 25px;
+	margin-top: 4px;
+	float: right;
+
+	background-image: url(../img/download.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
