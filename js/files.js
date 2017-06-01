@@ -183,11 +183,44 @@ class Files {
 
 					if(file.optional && file.type != "dir") {
 						let fileDownload = document.createElement("div");
-						fileDownload.className = "file-download" + (file.downloaded ? " file-downloaded" : "");
+						fileDownload.className = (file.downloaded ? "file-delete" : "file-download");
 						fileDownload.title = (file.downloaded
 							? "This file is marked as optional and was downloaded"
 							: "This file is marked as optional and wasn't downloaded yet"
 						);
+						if(file.downloaded) {
+							let clickFunc = e => {
+								fileDownload.onclick = e => {
+									e.preventDefault();
+									e.stopPropagation();
+								};
+								fileDownload.classList.add("file-delete-inactive");
+
+								this.fs.deleteFile(this.getAbsolutePath((path ? path + "/" : "") + file.name))
+									.then(() => {
+										fileDownload.title = "This file is marked as optional and wasn't downloaded yet";
+										fileDownload.classList.remove("file-delete-inactive");
+										fileDownload.classList.remove("file-delete");
+										fileDownload.classList.add("file-download");
+										fileDownload.onclick = e => {
+											e.preventDefault();
+											e.stopPropagation();
+										};
+									}, () => {
+										fileDownload.onclick = clickFunc;
+										fileDownload.classList.remove("file-delete-inactive");
+									});
+
+								e.preventDefault();
+								e.stopPropagation();
+							};
+							fileDownload.onclick = clickFunc;
+						} else {
+							fileDownload.onclick = e => {
+								e.preventDefault();
+								e.stopPropagation();
+							};
+						}
 						fileNode.appendChild(fileDownload);
 					}
 

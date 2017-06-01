@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
 
 	zeroPage.cmd("wrapperInnerLoaded");
 	setTimeout(() => {
-		if(location.hash == "") {
+		if(location.hash.substr(0, 2) != "#/") {
 			files.load("");
 		}
 	}, 0);

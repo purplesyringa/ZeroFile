@@ -46,14 +46,10 @@ class ZeroOptional {
 		});
 	}
 	deleteFile(file) {
-		return this.page.cmd("fileDelete", [
+		return this.page.cmd("optionalFileDelete", [
 			file // file
-		]).then(res => {
-			if(res === "ok") {
-				return Promise.resolve(file);
-			} else {
-				return Promise.reject(res);
-			}
+		]).then(() => {
+			return Promise.resolve(file);
 		});
 	}
 

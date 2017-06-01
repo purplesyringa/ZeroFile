@@ -28,8 +28,10 @@ class ZeroOptionalProxy {
 			.catch(() => this.optional.writeFile(file, content));
 	}
 	deleteFile(file) {
-		return this.fs.deleteFile(file)
-			.catch(() => this.optional.deleteFile(file));
+		return this.optional.deleteFile(file)
+			.catch(() => {})
+			.then(() => this.fs.deleteFile(file))
+			.catch(() => {});
 	}
 
 	readDirectory(dir, recursive) {

@@ -48,12 +48,24 @@
 	height: 25px;
 	margin-top: 4px;
 	float: right;
+	cursor: default;
 
 	background-image: url(../img/download.png);
 	background-size: contain;
 	background-repeat: no-repeat;
 }
-.file-downloaded {
-	background-image: url(../img/downloaded.png);
+.file-delete {
+	display: inline-block;
+	width: 16px;
+	height: 25px;
+	margin-top: 4px;
+	float: right;
+
+	background-image: url(../img/delete.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.file-delete-inactive {
+	background-image: url(../img/delete-inactive.png);
 	opacity: 0.3;
 }

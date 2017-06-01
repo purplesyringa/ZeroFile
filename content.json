@@ -7,15 +7,19 @@
  "description": "File manager",
  "files": {
   "css/all.css": {
-   "sha512": "e7a645f9f495ce6e58620a930d6d35b2e00328d21ad9588ca9ec034734c4f871",
-   "size": 3160
+   "sha512": "00c5591a5089e21cf7700cb6c1f55e9742e720b63bc527affb8f833eb6c87b56",
+   "size": 3393
+  },
+  "img/delete-inactive.png": {
+   "sha512": "858081118cc9a443e282e4d380129d9f5dbfd74ddd01a29032053de801d90cd4",
+   "size": 2785
+  },
+  "img/delete.png": {
+   "sha512": "d58dc84125b490b812c558b9b4227eb49c70809361e482301a30ef2b5da7886e",
+   "size": 3048
   },
   "img/download.png": {
    "sha512": "9884d71831f864fe2f77ae9c92f12d6c44e2203faf5bd33c45357b3d5220e099",
-   "size": 1687
-  },
-  "img/downloaded.png": {
-   "sha512": "ba659b926d22b8770886746753d66b5175f71ef7101f96bdddbe0edfcc25ed01",
    "size": 1687
   },
   "img/file/dir.png": {
@@ -47,8 +51,8 @@
    "size": 657
   },
   "js/all.js": {
-   "sha512": "0b06928c3b27305b3f8e94a66b91943115128a04bf84a11bbaf6535ea419cc6d",
-   "size": 26850
+   "sha512": "f07364808f1f8d889c8519cbff77eb348a41b7bdf6fe90172e8e8e12f4961839",
+   "size": 28175
   }
  },
  "files_optional": {
@@ -95,16 +99,16 @@
  },
  "ignore": "^.git|(js|css)/(?!all.(js|css))|^data.txt$",
  "inner_path": "content.json",
- "modified": 1496258805,
+ "modified": 1496261128,
  "optional": "^files/.*",
  "postmessage_nonce_security": true,
  "sign": [
-  83772218699912890169707884264217199630726325687780556332489683577285214590435,
-  87457514673196644238407396098566801128965748618998589281156340737003576482855
+  66294678319182803864013600704413896208334215160686188990069784230696877542315,
+  49309187416374420589665065140738802085903394560946619088882707071240665364399
  ],
  "signers_sign": "HGeqZHbJyxB3UCMgkaYS84fvaZdhqY7QA38GVBHDZQcCRwutv/EkUS7503E++WqJ3iYGTkLzDBbdx9KASFGMOd0=",
  "signs": {
-  "1KgAQscdGPvWqL8uMPkTrHnA5mZE6TR51S": "HDDDdvE8WkGdDpw6Az+N+KfQps3Ak2cBNnNFPue/GpbzdJbkozR4GQqF6Efvn1S2OHhU89ry+NPVx9ythkGEjZA="
+  "1KgAQscdGPvWqL8uMPkTrHnA5mZE6TR51S": "HMaWMht9IpdPF4nJxnafoLT/d+/WFgfHXyvgnCG07nkzVQpe9vH6tfs2MEAXDSd2zrbA+yUTpYScR5ACIEeI22A="
  },
  "signs_required": 1,
  "title": "ZeroFile",
