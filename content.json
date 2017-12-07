@@ -99,21 +99,15 @@
  },
  "ignore": "^.git|(js|css)/(?!all.(js|css))|^data.txt$",
  "inner_path": "content.json",
- "modified": 1496261128,
- "optional": "^files/.*",
+ "modified": 1512656759,
+ "optional": "",
  "postmessage_nonce_security": true,
- "sign": [
-  66294678319182803864013600704413896208334215160686188990069784230696877542315,
-  49309187416374420589665065140738802085903394560946619088882707071240665364399
- ],
  "signers_sign": "HGeqZHbJyxB3UCMgkaYS84fvaZdhqY7QA38GVBHDZQcCRwutv/EkUS7503E++WqJ3iYGTkLzDBbdx9KASFGMOd0=",
  "signs": {
-  "1KgAQscdGPvWqL8uMPkTrHnA5mZE6TR51S": "HMaWMht9IpdPF4nJxnafoLT/d+/WFgfHXyvgnCG07nkzVQpe9vH6tfs2MEAXDSd2zrbA+yUTpYScR5ACIEeI22A="
+  "1KgAQscdGPvWqL8uMPkTrHnA5mZE6TR51S": "G2mUGAeIqxc/1GmSROV1zyk3IMvHLD2n7tH0dKu7MrTaeRFAtvWY2eKcPOc5VhgAjLpFBSj1saZUU/0kfMi7HGw="
  },
  "signs_required": 1,
  "title": "ZeroFile",
- "translate": [
-  "js/all.js"
- ],
- "zeronet_version": "0.5.5"
+ "translate": ["js/all.js"],
+ "zeronet_version": "0.6.0"
 }
